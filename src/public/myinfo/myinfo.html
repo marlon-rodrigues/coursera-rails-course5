@@ -1,0 +1,31 @@
+<div class="container myinfo-wrapper">
+  <h2> My Info</h2>
+
+  <div class="myinfo-container" ng-if="myInfoCtrl.nouserinfo == false">
+    <div class="myinfo-row">
+      <span>First Name: </span>{{myInfoCtrl.userfirstname}}
+    </div>
+    <div class="myinfo-row">
+      <span>Last Name: </span>{{myInfoCtrl.userlastname}}
+    </div>
+    <div class="myinfo-row">
+      <span>Email: </span>{{myInfoCtrl.useremail}}
+    </div>
+    <div class="myinfo-row">
+      <span>Phone: </span>{{myInfoCtrl.userphone}}
+    </div>
+    <div class="myinfo-row">
+      <span>Favourite Menu Item: </span>
+      <div class="fav-item">
+        <img class="img-responsive" width="250" height="150" ng-src="https://mr-restaurant-server.herokuapp.com/images/{{myInfoCtrl.favitem.short_name}}.jpg" alt="{{$ctrl.menuItem.name}}">
+        {{myInfoCtrl.favitem.name}} <br>
+        {{myInfoCtrl.favitem.description}}
+      </div>
+    </div>
+  </div>
+
+  <div class="myinfo-container" ng-if="myInfoCtrl.nouserinfo == true">
+    <span>Not Signup Yet.</span><a ui-sref="public.signup"> Sign Up Now!</a>
+  </div>
+
+</div>
